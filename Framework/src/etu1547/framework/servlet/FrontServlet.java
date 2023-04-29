@@ -1,5 +1,6 @@
 package etu1547.framework.servlet;
 
+import etu1547.framework.Mapping;
 import etu1547.util.Util;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -13,11 +14,12 @@ public class FrontServlet extends HttpServlet {
 
     String url;
     Util util;
-    
+    protected HashMap<String, Mapping> mappingURL;
     @Override
     public void init() throws ServletException {
         super.init();
         util=new Util();
+        mappingURL=new HashMap<>();
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
